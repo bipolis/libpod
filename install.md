@@ -176,17 +176,25 @@ echo -e "[registries.search]\nregistries = ['docker.io', 'quay.io']" | sudo tee 
 
 #### Fedora
 
-You can test the very latest Podman in Fedora's `updates-testing`
-repository before it goes out to all Fedora users.
+You can test the very latest Podman 2 ways, before it goes out to all Fedora users.
+
+##### Fedora's `updates-testing` repository
 
 ```console
-sudo yum distro-sync --enablerepo=updates-testing podman
+sudo dnf distro-sync --enablerepo=updates-testing podman
 ```
 
 If you use a newer Podman package from Fedora's `updates-testing`, we would
 appreciate your `+1` feedback in [Bodhi, Fedora's update management
 system](https://bodhi.fedoraproject.org/updates/?packages=podman).
 
+##### baude/Upstream_CRIO_Family repository
+
+The newest version you can get in this repo
+```console
+sudo dnf config-manager --add-repo https://copr.fedorainfracloud.org/coprs/baude/Upstream_CRIO_Family/repo/fedora-31/baude-Upstream_CRIO_Family-fedora-31.repo
+```
+If necessary replace the releaseversion.
 
 #### [Raspbian](https://raspbian.org)
 
